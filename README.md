@@ -1,6 +1,7 @@
 # 🔥 Şef Kebab — QR Menü Sistemi
 
-Premium Django tabanlı dijital restoran menü sistemi. QR kod okutulunca doğrudan menüye yönlendirir. Admin panelinden tam yönetim.
+Premium Django tabanlı dijital restoran menü sistemi. QR kod okutulunca doğrudan menüye yönlendirir. Admin panelinden tam yönetim. 
+
 
 ---
 
