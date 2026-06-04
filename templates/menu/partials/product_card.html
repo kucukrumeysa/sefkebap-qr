@@ -1,0 +1,34 @@
+<div class="product-card menu-product-card">
+    {% if product.image %}
+    <div class="product-card-img">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+        {% if product.is_featured %}
+        <div class="product-badges">
+            <span class="badge-hot">⭐ Çok Satan</span>
+        </div>
+        {% endif %}
+    </div>
+    {% elif product.is_featured %}
+    <div class="product-badges-no-img">
+        <span class="badge-hot">⭐ Çok Satan</span>
+    </div>
+    {% endif %}
+
+    <div class="product-card-body">
+        <div class="product-card-top">
+            <h3 class="product-title">{{ product.name }}</h3>
+            {% if product.portion_info %}
+            <span class="product-portion-tag">{{ product.portion_info }}</span>
+            {% endif %}
+        </div>
+        {% if product.description %}
+        <p class="product-desc">{{ product.description }}</p>
+        {% endif %}
+        <div class="product-footer">
+            <span class="product-price">{{ product.formatted_price }}</span>
+            {% if not product.is_available %}
+            <span class="badge-unavailable">Mevcut Değil</span>
+            {% endif %}
+        </div>
+    </div>
+</div>

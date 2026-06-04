@@ -1,0 +1,804 @@
+[
+  {
+    "model": "menu.category",
+    "pk": 1,
+    "fields": {
+      "name": "Izgaralar",
+      "slug": "izgaralar",
+      "order": 1,
+      "icon": "🥩",
+      "description": "Közde ve ızgarada pişirilen geleneksel et çeşitleri"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 2,
+    "fields": {
+      "name": "Dürüm Çeşitleri",
+      "slug": "durum-cesitleri",
+      "order": 2,
+      "icon": "🌯",
+      "description": "El yapımı lavaşta sarılan lezzetler"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 3,
+    "fields": {
+      "name": "İkramlar",
+      "slug": "ikramlar",
+      "order": 3,
+      "icon": "🥗",
+      "description": "Siparişlerinizle birlikte servis edilir."
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 4,
+    "fields": {
+      "name": "İçecekler",
+      "slug": "icecekler",
+      "order": 4,
+      "icon": "🥤",
+      "description": "Soğuk ve sıcak içecekler"
+    }
+  },
+  {
+    "model": "menu.subcategory",
+    "pk": 1,
+    "fields": {
+      "category": 4,
+      "name": "Gazlı İçecekler",
+      "order": 1
+    }
+  },
+  {
+    "model": "menu.subcategory",
+    "pk": 2,
+    "fields": {
+      "category": 4,
+      "name": "Meyve Suları",
+      "order": 2
+    }
+  },
+  {
+    "model": "menu.subcategory",
+    "pk": 3,
+    "fields": {
+      "category": 4,
+      "name": "Diğer",
+      "order": 3
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Ali Nazik",
+      "description": "Közlenmiş patlıcan ezmesi üzerine servis edilen, tereyağlı kuzu etleri ile hazırlanan geleneksel kebap.",
+      "price": "320.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "1,5 porsiyon",
+      "order": 1,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Külbastı",
+      "description": "İnce dövülmüş kuzu eti, közde pişirilmiş biber ve domates eşliğinde sunulur.",
+      "price": "280.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "1,5 porsiyon",
+      "order": 2,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Lokum Kebap",
+      "description": "Dana bonfileden hazırlanan, ağızda eriyen yumuşaklıkta özel kebap çeşidi.",
+      "price": "340.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "180 gr",
+      "order": 3,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 4,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Ciğer",
+      "description": "Taze kuzu ciğeri, közde pişirilmiş, yanında soğan salatası ile servis edilir.",
+      "price": "220.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 4,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 5,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Tavuk Kelebek",
+      "description": "Özel baharatlarla marine edilmiş, açık pişirme tekniğiyle közde hazırlanan tavuk.",
+      "price": "240.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 5,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Tavuk Kanat",
+      "description": "Özel sos ve baharatlarla marine edilmiş, ızgarada pişirilmiş tavuk kanatları.",
+      "price": "200.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 6,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 7,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "İkiyüzlü Adana Kebap",
+      "description": "Her iki yüzü de farklı baharatlarla hazırlanmış, karakterli ve derin aromalı Adana kebap.",
+      "price": "310.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "1,5 porsiyon",
+      "order": 7,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 8,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Sıcak Ezme Üstü Kebap",
+      "description": "Ev yapımı acılı ezme üzerine servis edilen, ateşin tam ortasında pişmiş özel kebap.",
+      "price": "295.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "1,5 porsiyon",
+      "order": 8,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 9,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Kuzu Kaburga",
+      "description": "Saatlerce marine edilmiş, yavaş pişirme tekniğiyle hazırlanan, kemikten düşen kuzu kaburga.",
+      "price": "380.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "",
+      "order": 9,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 10,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Kazbaşı",
+      "description": "Kıyma ve kuzu etinin özel harman oranıyla hazırlandığı, yöresel tarife dayanan lezzet.",
+      "price": "285.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "1,5 porsiyon",
+      "order": 10,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 11,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Kuşbaşı",
+      "description": "Taze kuzu etinden hazırlanan, sebzelerle birlikte ateşte pişirilen kuşbaşı kebap.",
+      "price": "290.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "1,5 porsiyon",
+      "order": 11,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 12,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Patlıcan Kebap",
+      "description": "Közlenmiş patlıcanlarla birlikte şişe dizilmiş, aromasıyla büyüleyen geleneksel kebap.",
+      "price": "275.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "1,5 porsiyon",
+      "order": 12,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 13,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Beyti",
+      "description": "Kıyma karışımından hazırlanan, lavaşa sarılıp fırınlanan, domates sosuyla sunulan enfes kebap.",
+      "price": "300.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "1,5 porsiyon",
+      "order": 13,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 14,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Tavuk Şiş",
+      "description": "Marine edilmiş tavuk göğüs parçaları, renkli sebzelerle şişe dizilerek közde pişirilir.",
+      "price": "220.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 14,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 15,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Kemikli Tavuk Şiş",
+      "description": "Kemikli tavuk parçalarının baharatlı marinasyonla hazırlandığı, özel lezzetli şiş.",
+      "price": "235.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 15,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 16,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Adana Kebap",
+      "description": "Kıyma ve kuyruk yağının özenle yoğrulduğu, acı biberli geleneksel Adana tarifi.",
+      "price": "265.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "",
+      "order": 16,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 17,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "name": "Karışık Kebap",
+      "description": "Adana, tavuk şiş, kuzu şiş ve kaburganın bir arada servis edildiği muhteşem karma tabak.",
+      "price": "1800.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "8 porsiyon",
+      "order": 17,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 18,
+    "fields": {
+      "category": 2,
+      "subcategory": null,
+      "name": "Adana Dürüm",
+      "description": "Adana kebap, el yapımı lavaş, taze domates, maydanoz ve nar ekşisiyle sarılır.",
+      "price": "180.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "",
+      "order": 1,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 19,
+    "fields": {
+      "category": 2,
+      "subcategory": null,
+      "name": "Tavuk Şiş Dürüm",
+      "description": "Izgara tavuk, taze sebze, özel sos ve el yapımı lavaşla hazırlanan hafif dürüm.",
+      "price": "160.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 2,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 20,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Salata",
+      "description": "Mevsim yeşillikleri, domates, salatalık ve limon sosuyla hazırlanan taze mevsim salatası.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 1,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 21,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Soğan Salatası",
+      "description": "İnce kıyılmış soğan, pul biber ve sumakla harmanlanan geleneksel kebap salatası.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 2,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 22,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Acılı Ezme",
+      "description": "Ev yapımı, taze domates ve biberden hazırlanan, kendine özgü acılı ezme.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 3,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 23,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Haydari",
+      "description": "Süzme yoğurt, sarımsak ve taze otlardan oluşan kremsi ve ferahlatıcı meze.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 4,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 24,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Humus",
+      "description": "Geleneksel tarifle hazırlanan, zeytinyağı ve kırmızı biberle servis edilen nohut ezmesi.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 5,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 25,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Patlıcan Ezmesi",
+      "description": "Közlenmiş patlıcandan hazırlanan, dumanlı aromalı özel ezme.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 6,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 26,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Közlenmiş Mantar",
+      "description": "Közde pişirilmiş, tereyağ ve sarımsak ile aromalandırılmış taze mantar.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 7,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 27,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Közlenmiş Biber",
+      "description": "Fırında közlenmiş, kabuğu soyulmuş, zeytinyağıyla servis edilen közde biber.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 8,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 28,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Yeşillik Tabağı",
+      "description": "Taze nane, roka, maydanoz ve dereotu; yanında limon dilimleriyle servis edilir.",
+      "price": "0.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 9,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 29,
+    "fields": {
+      "category": 4,
+      "subcategory": 1,
+      "name": "Coca-Cola",
+      "description": "330 ml kutu.",
+      "price": "60.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "330 ml",
+      "order": 1,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 30,
+    "fields": {
+      "category": 4,
+      "subcategory": 1,
+      "name": "Coca-Cola Zero",
+      "description": "Şekersiz, 330 ml kutu.",
+      "price": "60.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "330 ml",
+      "order": 2,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 31,
+    "fields": {
+      "category": 4,
+      "subcategory": 1,
+      "name": "Coca-Cola Şişe",
+      "description": "1 litrelik şişe.",
+      "price": "90.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "1 lt",
+      "order": 3,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 32,
+    "fields": {
+      "category": 4,
+      "subcategory": 1,
+      "name": "Fanta",
+      "description": "Portakallı, 330 ml kutu.",
+      "price": "60.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "330 ml",
+      "order": 4,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 33,
+    "fields": {
+      "category": 4,
+      "subcategory": 1,
+      "name": "Sprite",
+      "description": "Limonlu, 330 ml kutu.",
+      "price": "60.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "330 ml",
+      "order": 5,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 34,
+    "fields": {
+      "category": 4,
+      "subcategory": 1,
+      "name": "Soda",
+      "description": "Doğal maden sodası.",
+      "price": "40.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "200 ml",
+      "order": 6,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 35,
+    "fields": {
+      "category": 4,
+      "subcategory": 2,
+      "name": "Fusetea Şeftali",
+      "description": "Şeftali aromalı soğuk çay.",
+      "price": "55.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "330 ml",
+      "order": 1,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 36,
+    "fields": {
+      "category": 4,
+      "subcategory": 2,
+      "name": "Fusetea Limonlu",
+      "description": "Limon aromalı soğuk çay.",
+      "price": "55.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "330 ml",
+      "order": 2,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 37,
+    "fields": {
+      "category": 4,
+      "subcategory": 2,
+      "name": "Cappy Kayısı",
+      "description": "Doğal kayısı suyu.",
+      "price": "55.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "250 ml",
+      "order": 3,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 38,
+    "fields": {
+      "category": 4,
+      "subcategory": 2,
+      "name": "Cappy Vişne",
+      "description": "Doğal vişne suyu.",
+      "price": "55.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "250 ml",
+      "order": 4,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 39,
+    "fields": {
+      "category": 4,
+      "subcategory": 2,
+      "name": "Cappy Şeftali",
+      "description": "Doğal şeftali suyu.",
+      "price": "55.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "250 ml",
+      "order": 5,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 40,
+    "fields": {
+      "category": 4,
+      "subcategory": 3,
+      "name": "Su",
+      "description": "Doğal kaynak suyu.",
+      "price": "25.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "500 ml",
+      "order": 1,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 41,
+    "fields": {
+      "category": 4,
+      "subcategory": 3,
+      "name": "Kapalı Ayran",
+      "description": "Soğuk servis edilen sade ayran.",
+      "price": "40.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "200 ml",
+      "order": 2,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 42,
+    "fields": {
+      "category": 4,
+      "subcategory": 3,
+      "name": "Açık Ayran",
+      "description": "Günlük taze yapılan, köpüklü açık ayran.",
+      "price": "50.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": true,
+      "portion_info": "400 ml",
+      "order": 3,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 43,
+    "fields": {
+      "category": 4,
+      "subcategory": 3,
+      "name": "Şalgam",
+      "description": "Ekşi ve hafif acılı geleneksel Adana şalgam suyu.",
+      "price": "45.00",
+      "image": "",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "330 ml",
+      "order": 4,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  }
+]

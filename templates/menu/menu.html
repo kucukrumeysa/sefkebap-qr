@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şef Kebab — Dijital Menü</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FAF7F2;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        
+        .menu-header {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 15px;
+            text-align: center;
+        }
+        
+        .menu-logo {
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+        
+        .menu-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #E2C08D;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        
+        .menu-subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            color: #aaa;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        
+        .ikram-banner {
+            background-color: #1b1b1b;
+            color: #E2C08D;
+            font-size: 0.8rem;
+            padding: 10px 15px;
+            text-align: center;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        
+        .category-nav {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            border: 1px solid #C5A880;
+            color: #C5A880;
+            background: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: #C5A880;
+            color: #fff;
+            border-color: #C5A880;
+        }
+        
+        .category-title-wrap {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .category-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #222;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background-color: #C5A880;
+        }
+        
+        .product-list {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .product-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #EAE5DC;
+        }
+        
+        .product-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .product-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .product-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #C5A880;
+            white-space: nowrap;
+        }
+        
+        .site-footer {
+            background-color: #222;
+            color: #666;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="menu-header">
+        {% load static %}
+        <img src="{% static 'images/logo.webp' %}" alt="Şef Kebab" class="menu-logo" onerror="this.src='https://placehold.co/100x100?text=Logo'">
+        <h1 class="menu-title">Şef Kebab</h1>
+        <div class="menu-subtitle">Lezzet & Gelenek</div>
+    </header>
+
+    <!-- Banner -->
+    <div class="ikram-banner">
+        🎁 <strong>İkramlarımız:</strong> Salata, Közlenmiş Mantar, Humus, Soğan Salatası, Yeşillik, Ezme ve Yoğurtlu Patlıcan — ana yemeklerin yanında ikram olarak sunulmaktadır.
+    </div>
+
+    <!-- Navigation -->
+    <div class="container">
+        <nav class="category-nav">
+            {% for category in categories %}
+                {% if category.active_products.exists %}
+                <button class="category-btn {% if forloop.first %}active{% endif %}" data-target="cat-{{ category.slug }}">
+                    {{ category.name }}
+                </button>
+                {% endif %}
+            {% endfor %}
+        </nav>
+    </div>
+
+    <!-- Menu Sections -->
+    <main class="container mb-5">
+        {% for category in categories %}
+            {% if category.active_products.exists %}
+            <section id="cat-{{ category.slug }}" class="menu-section {% if not forloop.first %}d-none{% endif %} mb-5">
+                <div class="category-title-wrap">
+                    <h2 class="category-title">{{ category.name }}</h2>
+                </div>
+                
+                <div class="product-list">
+                    {% for product in category.active_products %}
+                    <div class="product-item">
+                        <div class="product-left">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img" loading="lazy">
+                            {% endif %}
+                            <span class="product-name">{{ product.name }}</span>
+                        </div>
+                        <span class="product-price">{{ product.price|floatformat:0 }} ₺</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+        {% endfor %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        AFİYET OLSUN
+    </footer>
+
+    <!-- JavaScript to handle tab switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.category-btn');
+            const sections = document.querySelectorAll('.menu-section');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Remove active status from all buttons
+                    buttons.forEach(b => b.classList.remove('active'));
+                    // Add active status to current button
+                    this.classList.add('active');
+
+                    // Hide all sections
+                    sections.forEach(sec => sec.classList.add('d-none'));
+
+                    // Show selected section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.remove('d-none');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
