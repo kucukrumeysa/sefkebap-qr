@@ -30,10 +30,10 @@ PRODUCT_IMAGE_MAP = {
     "Tavuk Şiş Dürüm":        "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=80",
     # İkramlar
     "Salata":                  "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80",
-    "Soğan Salatası":          "https://images.unsplash.com/photo-1572441713132-51c75654db73?w=600&q=80",
+    "Soğan Salatası":          "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=600&q=80",
     "Acılı Ezme":              "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
     "Haydari":                 "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
-    "Humus":                   "https://images.unsplash.com/photo-1612257416648-d04f0f400082?w=600&q=80",
+    "Humus":                   "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80",
     "Patlıcan Ezmesi":         "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
     "Közlenmiş Mantar":        "https://images.unsplash.com/photo-1504545102780-26774c1bb073?w=600&q=80",
     "Közlenmiş Biber":         "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
