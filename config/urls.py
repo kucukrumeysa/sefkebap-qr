@@ -10,8 +10,8 @@ ADMIN_URL = config('ADMIN_URL', default='admin/')
 if ADMIN_URL and not ADMIN_URL.endswith('/'):
     ADMIN_URL += '/'
 
-admin.site.site_header = 'Şef Kebab Yönetim Paneli'
-admin.site.site_title = 'Şef Kebab Admin'
+admin.site.site_header = 'Şef Kebap Yönetim Paneli'
+admin.site.site_title = 'Şef Kebap Admin'
 admin.site.index_title = 'Menü Yönetimi'
 
 urlpatterns = [

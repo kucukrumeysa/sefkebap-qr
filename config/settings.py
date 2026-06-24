@@ -117,7 +117,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Restaurant settings
-RESTAURANT_NAME = config('RESTAURANT_NAME', default='Şef Kebab')
+RESTAURANT_NAME = config('RESTAURANT_NAME', default='Şef Kebap')
 RESTAURANT_PHONE = config('RESTAURANT_PHONE', default='+90 (555) 123 45 67')
 RESTAURANT_ADDRESS = config('RESTAURANT_ADDRESS', default='Örnek Mah. Lezzet Sok. No:1, İstanbul')
 RESTAURANT_WHATSAPP = config('RESTAURANT_WHATSAPP', default='905551234567')
@@ -128,11 +128,11 @@ MENU_URL = config('MENU_URL', default='http://localhost:8000/menu/')
 
 # Jazzmin Admin Panel Customization (Bright/Light Theme)
 JAZZMIN_SETTINGS = {
-    "site_title": "Şef Kebab Yönetim Paneli",
-    "site_header": "Şef Kebab",
-    "site_brand": "Şef Kebab",
-    "welcome_sign": "Şef Kebab Menü Yönetimine Hoş Geldiniz",
-    "copyright": "Şef Kebab",
+    "site_title": "Şef Kebap Yönetim Paneli",
+    "site_header": "Şef Kebap",
+    "site_brand": "Şef Kebap",
+    "welcome_sign": "Şef Kebap Menü Yönetimine Hoş Geldiniz",
+    "copyright": "Şef Kebap",
     "search_model": "menu.Product",
     "show_sidebar": True,
     "navigation_expanded": True,

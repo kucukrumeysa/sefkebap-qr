@@ -11,7 +11,7 @@ def restaurant_info(request):
     is_open = open_time <= current_time <= close_time
 
     return {
-        'RESTAURANT_NAME': getattr(settings, 'RESTAURANT_NAME', 'Şef Kebab'),
+        'RESTAURANT_NAME': getattr(settings, 'RESTAURANT_NAME', 'Şef Kebap'),
         'RESTAURANT_PHONE': getattr(settings, 'RESTAURANT_PHONE', ''),
         'RESTAURANT_ADDRESS': getattr(settings, 'RESTAURANT_ADDRESS', ''),
         'RESTAURANT_WHATSAPP': getattr(settings, 'RESTAURANT_WHATSAPP', ''),

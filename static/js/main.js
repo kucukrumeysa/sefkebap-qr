@@ -1,4 +1,4 @@
-// ── Şef Kebab · main.js ──────────────────────────────────
+// ── Şef Kebap · main.js ──────────────────────────────────
 
 // Navbar scroll effect
 const nav = document.getElementById('mainNav');

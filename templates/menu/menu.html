@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Şef Kebab — Dijital Menü</title>
-    <meta name="description" content="Şef Kebab dijital menüsü. Izgaralar, dürümler, ikramlar ve içecekler.">
+    <title>Şef Kebap — Dijital Menü</title>
+    <meta name="description" content="Şef Kebap dijital menüsü. Izgaralar, dürümler, ikramlar ve içecekler.">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -384,7 +384,7 @@
     <header class="menu-header">
         {% load static menu_tags %}
         <div class="menu-logo-wrap">
-            <img src="{% static 'images/logo.webp' %}" alt="Şef Kebab" class="menu-logo"
+            <img src="{% static 'images/logo.webp' %}" alt="Şef Kebap" class="menu-logo"
                  onerror="this.style.display='none'">
         </div>
         <h1 class="menu-title">Şef Kebap</h1>
@@ -455,7 +455,7 @@
             {% if category.active_products.exists %}
             <section id="cat-{{ category.slug }}" class="menu-section d-none">
                 <div class="section-header">
-                    <div class="section-eyebrow">Şef Kebab</div>
+                    <div class="section-eyebrow">Şef Kebap</div>
                     <h2 class="section-title">{{ category.icon }} {{ category.name }}</h2>
                     <div class="section-line"></div>
                     {% if category.description %}
