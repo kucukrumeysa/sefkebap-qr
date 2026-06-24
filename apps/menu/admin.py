@@ -77,7 +77,7 @@ class ProductAdmin(admin.ModelAdmin):
                 'border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.15);" />',
                 obj.image.url
             )
-        return format_html(
+        return mark_safe(
             '<div style="width:54px;height:54px;border-radius:8px;background:#f5f0e8;'
             'display:flex;align-items:center;justify-content:center;'
             'font-size:22px;color:#ccc;">📷</div>'
@@ -102,7 +102,7 @@ class ProductAdmin(admin.ModelAdmin):
                 ''',
                 url=obj.image.url
             )
-        return format_html(
+        return mark_safe(
             '<div style="padding:16px;background:#fafafa;border:2px dashed #ddd;'
             'border-radius:10px;text-align:center;color:#999;font-size:13px;">'
             '📷 Henüz görsel yüklenmedi.<br>'
@@ -113,7 +113,8 @@ class ProductAdmin(admin.ModelAdmin):
 
     def formatted_price_display(self, obj):
         if obj.price == 0:
-            return format_html('<span style="color:#aaa;font-size:11px;">İkram</span>')
+            return mark_safe('<span style="color:#aaa;font-size:11px;">İkram</span>')
         return format_html('<strong style="color:#C5A880;">₺{}</strong>', f'{obj.price:.0f}')
     formatted_price_display.short_description = 'Fiyat'
     formatted_price_display.admin_order_field = 'price'
+
