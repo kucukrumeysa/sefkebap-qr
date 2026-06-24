@@ -106,8 +106,8 @@
                         <a href="{{ RESTAURANT_MAPS_URL }}" target="_blank" class="btn-footer-action">
                             <i class="bi bi-geo-alt-fill"></i> Konumu Göster
                         </a>
-                        <a href="https://wa.me/{{ RESTAURANT_WHATSAPP }}" target="_blank" class="btn-footer-action whatsapp">
-                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        <a href="tel:{{ RESTAURANT_PHONE }}" class="btn-footer-action">
+                            <i class="bi bi-telephone-fill"></i> Telefon
                         </a>
                         <!-- QR Menü kaldırıldı -->
                     </div>
@@ -133,15 +133,15 @@
             <i class="bi bi-geo-alt"></i>
             <span>Konum</span>
         </a>
-        <a href="https://wa.me/{{ RESTAURANT_WHATSAPP }}" target="_blank" class="mobile-nav-item">
-            <i class="bi bi-whatsapp"></i>
-            <span>İletişim</span>
+        <a href="tel:{{ RESTAURANT_PHONE }}" class="mobile-nav-item">
+            <i class="bi bi-telephone-fill"></i>
+            <span>Telefon</span>
         </a>
     </div>
 
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/{{ RESTAURANT_WHATSAPP }}" target="_blank" class="whatsapp-float d-none d-lg-flex">
-        <i class="bi bi-whatsapp"></i>
+    <!-- PHONE FLOAT -->
+    <a href="tel:{{ RESTAURANT_PHONE }}" class="whatsapp-float d-none d-lg-flex" style="background: #C5A880;">
+        <i class="bi bi-telephone-fill"></i>
     </a>
 
     <!-- Bootstrap JS -->
