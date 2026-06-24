@@ -100,21 +100,19 @@
         }
         .category-nav {
             display: flex;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 12px;
+            padding: 4px 8px;
+            gap: 0;
         }
-        .category-nav::-webkit-scrollbar { display: none; }
         .category-btn {
-            flex-shrink: 0;
             border: none;
             background: none;
             color: var(--text-light);
-            padding: 15px 16px 13px;
-            font-size: 0.75rem;
+            padding: 11px 14px 9px;
+            font-size: 0.72rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.8px;
@@ -466,6 +464,8 @@
                         <div class="prod-card">
                             {% if product.image %}
                                 <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                            {% elif product_images|get_item:product.name %}
+                                <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
                             {% else %}
                                 <div class="prod-card-emoji">{{ category.icon }}</div>
                             {% endif %}

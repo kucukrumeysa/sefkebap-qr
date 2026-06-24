@@ -68,14 +68,17 @@ def menu(request):
         'subcategories__products',
     ).all()
 
-    # Popüler ürünler - belirli sırayla
-    popular_slugs = [
+    # Popüler ürünler — sadece bu 8 ürün, bu sırayla
+    popular_names = [
         'Adana Kebap', 'Kuşbaşı', 'Ciğer', 'Tavuk Kanat',
-        'Patlıcan Kebap', 'Tavuk Şiş', 'Adana Dürüm', 'Tavuk Şiş Dürüm'
+        'Tavuk Şiş', 'Kuzu Kaburga', 'Adana Dürüm', 'Tavuk Şiş Dürüm'
     ]
-    featured_products = Product.objects.filter(
-        is_featured=True, is_available=True
+    all_featured = Product.objects.filter(
+        name__in=popular_names, is_available=True
     ).select_related('category')
+    # İsim listesinin sırasını koru
+    featured_map = {p.name: p for p in all_featured}
+    featured_products = [featured_map[name] for name in popular_names if name in featured_map]
 
     context = {
         'categories': categories,
