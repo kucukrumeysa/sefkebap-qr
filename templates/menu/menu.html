@@ -4,159 +4,307 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Şef Kebab — Dijital Menü</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Şef Kebab dijital menüsü. Izgaralar, dürümler, ikramlar ve içecekler.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --gold: #C5A880;
+            --gold-light: #E2C08D;
+            --dark: #1a1a1a;
+            --dark2: #2a2a2a;
+            --cream: #FAF7F2;
+            --cream2: #F0EBE1;
+            --text: #333;
+            --text-light: #777;
+            --border: #E8E2D9;
+        }
+
         body {
-            background-color: #FAF7F2;
+            background-color: var(--cream);
             font-family: 'Montserrat', sans-serif;
-            color: #333;
+            color: var(--text);
         }
-        
+
+        /* ── HEADER ── */
         .menu-header {
-            background-color: #222;
+            background: linear-gradient(160deg, #1a1a1a 0%, #2e2010 100%);
             color: #fff;
-            padding: 30px 15px;
+            padding: 36px 20px 28px;
             text-align: center;
-        }
-        
-        .menu-logo {
-            max-width: 100px;
-            margin-bottom: 15px;
-        }
-        
-        .menu-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            font-weight: 700;
-            color: #E2C08D;
-            margin: 0;
-            text-transform: uppercase;
-        }
-        
-        .menu-subtitle {
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            color: #aaa;
-            text-transform: uppercase;
-            margin-top: 5px;
-        }
-        
-        .ikram-banner {
-            background-color: #1b1b1b;
-            color: #E2C08D;
-            font-size: 0.8rem;
-            padding: 10px 15px;
-            text-align: center;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-        
-        .category-nav {
-            padding: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .category-btn {
-            border: 1px solid #C5A880;
-            color: #C5A880;
-            background: none;
-            border-radius: 20px;
-            padding: 8px 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .category-btn:hover, .category-btn.active {
-            background-color: #C5A880;
-            color: #fff;
-            border-color: #C5A880;
-        }
-        
-        .category-title-wrap {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .category-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #222;
-            display: inline-block;
             position: relative;
-            padding-bottom: 8px;
+            overflow: hidden;
         }
-        
-        .category-title::after {
+        .menu-header::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 25%;
-            width: 50%;
-            height: 2px;
-            background-color: #C5A880;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C5A880' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-        
-        .product-list {
-            max-width: 800px;
+        .menu-logo {
+            max-width: 90px;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+        .menu-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: var(--gold-light);
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+        .menu-subtitle {
+            font-size: 0.72rem;
+            letter-spacing: 5px;
+            color: #888;
+            text-transform: uppercase;
+            margin-top: 6px;
+            position: relative;
+            z-index: 1;
+        }
+        .header-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 14px auto 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── IKRAM BANNER ── */
+        .ikram-banner {
+            background: var(--dark2);
+            color: var(--gold-light);
+            font-size: 0.78rem;
+            padding: 11px 20px;
+            text-align: center;
+            border-top: 1px solid #3a3a3a;
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+
+        /* ── STICKY NAV ── */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250,247,242,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .category-nav {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 12px;
         }
-        
-        .product-item {
+        .category-nav::-webkit-scrollbar { display: none; }
+        .category-btn {
+            flex-shrink: 0;
+            border: none;
+            background: none;
+            color: var(--text-light);
+            padding: 15px 16px 13px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .category-btn:hover { color: var(--gold); }
+        .category-btn.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        /* ── MAIN CONTAINER ── */
+        .menu-main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 14px 70px;
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-header {
+            text-align: center;
+            padding: 34px 0 22px;
+        }
+        .section-eyebrow {
+            font-size: 0.62rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        .section-line {
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            margin: 12px auto 0;
+        }
+        .section-desc {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ── SUBCATEGORY LABEL ── */
+        .subcategory-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 20px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .subcategory-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── CARD GRID ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+        @media (min-width: 520px) {
+            .card-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        }
+        @media (min-width: 720px) {
+            .card-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        /* ── PRODUCT CARD ── */
+        .prod-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .prod-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+        }
+        .prod-card-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+            background: var(--cream2);
+        }
+        .prod-card-emoji {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--cream2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .prod-card-body {
+            padding: 11px 13px 13px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .prod-card-name {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+        .prod-card-desc {
+            font-size: 0.71rem;
+            color: var(--text-light);
+            line-height: 1.4;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .prod-card-footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #EAE5DC;
+            margin-top: 8px;
+            gap: 4px;
         }
-        
-        .product-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .product-img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        
-        .product-name {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .product-price {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #C5A880;
+        .prod-card-price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gold);
             white-space: nowrap;
         }
-        
-        .site-footer {
-            background-color: #222;
-            color: #666;
-            text-align: center;
-            padding: 25px 15px;
-            margin-top: 50px;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+        .price-free {
+            font-size: 0.65rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
+        .prod-card-portion {
+            font-size: 0.62rem;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+        .pop-badge {
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            border-radius: 20px;
+            padding: 2px 7px;
+            flex-shrink: 0;
+        }
+
+        /* ── FOOTER ── */
+        .site-footer {
+            background: var(--dark);
+            color: #555;
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .site-footer span { color: var(--gold); }
+
+        .d-none { display: none !important; }
     </style>
 </head>
 <body>
@@ -164,62 +312,188 @@
     <!-- Header -->
     <header class="menu-header">
         {% load static %}
-        <img src="{% static 'images/logo.webp' %}" alt="Şef Kebab" class="menu-logo" onerror="this.src='https://placehold.co/100x100?text=Logo'">
+        <img src="{% static 'images/logo.webp' %}" alt="Şef Kebab" class="menu-logo"
+             onerror="this.style.display='none'">
         <h1 class="menu-title">Şef Kebab</h1>
-        <div class="menu-subtitle">Lezzet & Gelenek</div>
+        <div class="menu-subtitle">Lezzet &amp; Gelenek</div>
+        <div class="header-divider"></div>
     </header>
 
-    <!-- Banner -->
+    <!-- Ikram Banner -->
     <div class="ikram-banner">
-        🎁 <strong>İkramlarımız:</strong> Salata, Közlenmiş Mantar, Humus, Soğan Salatası, Yeşillik, Ezme ve Yoğurtlu Patlıcan — ana yemeklerin yanında ikram olarak sunulmaktadır.
+        🎁 <strong>İkramlarımız:</strong> Salata, Közlenmiş Mantar, Humus, Soğan Salatası, Yeşillik, Ezme ve Yoğurtlu Patlıcan
+        — ana yemeklerin yanında ikram olarak sunulmaktadır.
     </div>
 
-    <!-- Navigation -->
-    <div class="container">
-        <nav class="category-nav">
+    <!-- Sticky Nav -->
+    <nav class="sticky-nav">
+        <div class="category-nav">
+            <button class="category-btn active" data-target="popular">⭐ Popüler</button>
             {% for category in categories %}
                 {% if category.active_products.exists %}
-                <button class="category-btn {% if forloop.first %}active{% endif %}" data-target="cat-{{ category.slug }}">
-                    {{ category.name }}
+                <button class="category-btn" data-target="cat-{{ category.slug }}">
+                    {{ category.icon }} {{ category.name }}
                 </button>
                 {% endif %}
             {% endfor %}
-        </nav>
-    </div>
+        </div>
+    </nav>
 
-    <!-- Menu Sections -->
-    <main class="container mb-5">
+    <main class="menu-main">
+
+        <!-- ── POPÜLER LEZZETLER ── -->
+        <section id="popular" class="menu-section">
+            <div class="section-header">
+                <div class="section-eyebrow">En Çok Sevilenler</div>
+                <h2 class="section-title">Popüler Lezzetler</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="card-grid">
+                {% for product in featured_products %}
+                <div class="prod-card">
+                    {% if product.image %}
+                        <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                    {% else %}
+                        <div class="prod-card-emoji">🥩</div>
+                    {% endif %}
+                    <div class="prod-card-body">
+                        <div class="prod-card-name">{{ product.name }}</div>
+                        {% if product.description %}
+                        <div class="prod-card-desc">{{ product.description }}</div>
+                        {% endif %}
+                        <div class="prod-card-footer">
+                            <span class="prod-card-price">
+                                {% if product.price > 0 %}{{ product.price|floatformat:0 }} ₺
+                                {% else %}<span class="price-free">İkram</span>{% endif %}
+                            </span>
+                            <span class="pop-badge">Popüler</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- ── KATEGORİLER (hepsi kart) ── -->
         {% for category in categories %}
             {% if category.active_products.exists %}
-            <section id="cat-{{ category.slug }}" class="menu-section {% if not forloop.first %}d-none{% endif %} mb-5">
-                <div class="category-title-wrap">
-                    <h2 class="category-title">{{ category.name }}</h2>
+            <section id="cat-{{ category.slug }}" class="menu-section d-none">
+                <div class="section-header">
+                    <div class="section-eyebrow">Şef Kebab</div>
+                    <h2 class="section-title">{{ category.icon }} {{ category.name }}</h2>
+                    <div class="section-line"></div>
+                    {% if category.description %}
+                    <p class="section-desc">{{ category.description }}</p>
+                    {% endif %}
                 </div>
-                
-                <div class="product-list">
-                    {% for product in category.active_products %}
-                    <div class="product-item">
-                        <div class="product-left">
-                            {% if product.image %}
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img" loading="lazy">
-                            {% endif %}
-                            <span class="product-name">{{ product.name }}</span>
+
+                {% if category.subcategories.exists %}
+                    {% for sub in category.subcategories.all %}
+                        {% if sub.active_products.exists %}
+                        <div class="subcategory-label">{{ sub.name }}</div>
+                        <div class="card-grid">
+                            {% for product in sub.active_products %}
+                            <div class="prod-card">
+                                {% if product.image %}
+                                    <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                                {% else %}
+                                    <div class="prod-card-emoji">{{ category.icon }}</div>
+                                {% endif %}
+                                <div class="prod-card-body">
+                                    <div class="prod-card-name">{{ product.name }}</div>
+                                    {% if product.description %}
+                                    <div class="prod-card-desc">{{ product.description }}</div>
+                                    {% endif %}
+                                    <div class="prod-card-footer">
+                                        <span class="prod-card-price">
+                                            {% if product.price > 0 %}{{ product.price|floatformat:0 }} ₺
+                                            {% else %}<span class="price-free">İkram</span>{% endif %}
+                                        </span>
+                                        {% if product.portion_info %}
+                                        <span class="prod-card-portion">{{ product.portion_info }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
                         </div>
-                        <span class="product-price">{{ product.price|floatformat:0 }} ₺</span>
-                    </div>
+                        {% endif %}
                     {% endfor %}
-                </div>
+
+                    {% for product in category.active_products %}
+                        {% if not product.subcategory %}
+                            {% if forloop.first %}
+                            <div class="card-grid" style="margin-top:8px;">
+                            {% endif %}
+                            <div class="prod-card">
+                                {% if product.image %}
+                                    <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                                {% else %}
+                                    <div class="prod-card-emoji">{{ category.icon }}</div>
+                                {% endif %}
+                                <div class="prod-card-body">
+                                    <div class="prod-card-name">{{ product.name }}</div>
+                                    {% if product.description %}
+                                    <div class="prod-card-desc">{{ product.description }}</div>
+                                    {% endif %}
+                                    <div class="prod-card-footer">
+                                        <span class="prod-card-price">
+                                            {% if product.price > 0 %}{{ product.price|floatformat:0 }} ₺
+                                            {% else %}<span class="price-free">İkram</span>{% endif %}
+                                        </span>
+                                        {% if product.portion_info %}
+                                        <span class="prod-card-portion">{{ product.portion_info }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% if forloop.last %}
+                            </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+
+                {% else %}
+                    <div class="card-grid">
+                        {% for product in category.active_products %}
+                        <div class="prod-card">
+                            {% if product.image %}
+                                <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                            {% else %}
+                                <div class="prod-card-emoji">{{ category.icon }}</div>
+                            {% endif %}
+                            <div class="prod-card-body">
+                                <div class="prod-card-name">{{ product.name }}</div>
+                                {% if product.description %}
+                                <div class="prod-card-desc">{{ product.description }}</div>
+                                {% endif %}
+                                <div class="prod-card-footer">
+                                    <span class="prod-card-price">
+                                        {% if product.price > 0 %}{{ product.price|floatformat:0 }} ₺
+                                        {% else %}<span class="price-free">İkram</span>{% endif %}
+                                    </span>
+                                    {% if product.portion_info %}
+                                    <span class="prod-card-portion">{{ product.portion_info }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
             </section>
             {% endif %}
         {% endfor %}
+
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-        AFİYET OLSUN
+        <span>Şef Kebab</span> — Afiyet Olsun
     </footer>
 
-    <!-- JavaScript to handle tab switching -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.category-btn');
@@ -227,19 +501,13 @@
 
             buttons.forEach(btn => {
                 btn.addEventListener('click', function () {
-                    // Remove active status from all buttons
                     buttons.forEach(b => b.classList.remove('active'));
-                    // Add active status to current button
                     this.classList.add('active');
-
-                    // Hide all sections
                     sections.forEach(sec => sec.classList.add('d-none'));
-
-                    // Show selected section
-                    const targetId = this.getAttribute('data-target');
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.classList.remove('d-none');
+                    const target = document.getElementById(this.getAttribute('data-target'));
+                    if (target) {
+                        target.classList.remove('d-none');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 });
             });

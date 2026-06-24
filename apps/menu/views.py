@@ -17,8 +17,18 @@ def menu(request):
         'subcategories__products',
     ).all()
 
+    # Popüler ürünler - belirli sırayla
+    popular_slugs = [
+        'Adana Kebap', 'Kuşbaşı', 'Ciğer', 'Tavuk Kanat',
+        'Patlıcan Kebap', 'Tavuk Şiş', 'Adana Dürüm', 'Tavuk Şiş Dürüm'
+    ]
+    featured_products = Product.objects.filter(
+        is_featured=True, is_available=True
+    ).select_related('category')
+
     context = {
         'categories': categories,
+        'featured_products': featured_products,
     }
     return render(request, 'menu/menu.html', context)
 
