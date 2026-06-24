@@ -8,7 +8,10 @@ def restaurant_info(request):
     open_time = getattr(settings, 'RESTAURANT_OPEN_TIME', '11:00')
     close_time = getattr(settings, 'RESTAURANT_CLOSE_TIME', '23:00')
 
-    is_open = open_time <= current_time <= close_time
+    if close_time >= open_time:
+        is_open = open_time <= current_time <= close_time
+    else:
+        is_open = current_time >= open_time or current_time <= close_time
 
     return {
         'RESTAURANT_NAME': getattr(settings, 'RESTAURANT_NAME', 'Şef Kebap'),

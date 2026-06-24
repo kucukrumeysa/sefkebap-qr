@@ -118,12 +118,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Restaurant settings
 RESTAURANT_NAME = config('RESTAURANT_NAME', default='Şef Kebap')
-RESTAURANT_PHONE = config('RESTAURANT_PHONE', default='+90 (555) 123 45 67')
-RESTAURANT_ADDRESS = config('RESTAURANT_ADDRESS', default='Örnek Mah. Lezzet Sok. No:1, İstanbul')
-RESTAURANT_WHATSAPP = config('RESTAURANT_WHATSAPP', default='905551234567')
-RESTAURANT_MAPS_URL = config('RESTAURANT_MAPS_URL', default='https://maps.google.com')
-RESTAURANT_OPEN_TIME = config('RESTAURANT_OPEN_TIME', default='11:00')
-RESTAURANT_CLOSE_TIME = config('RESTAURANT_CLOSE_TIME', default='23:00')
+RESTAURANT_PHONE = config('RESTAURANT_PHONE', default='(0322) 226 00 11')
+RESTAURANT_ADDRESS = config('RESTAURANT_ADDRESS', default='Yenibaraj, Seyhan / Adana')
+RESTAURANT_WHATSAPP = config('RESTAURANT_WHATSAPP', default='903222260011')
+RESTAURANT_MAPS_URL = config('RESTAURANT_MAPS_URL', default='https://maps.app.goo.gl/ZszCdqTErwmiDmbD8')
+RESTAURANT_OPEN_TIME = config('RESTAURANT_OPEN_TIME', default='09:00')
+RESTAURANT_CLOSE_TIME = config('RESTAURANT_CLOSE_TIME', default='00:00')
 MENU_URL = config('MENU_URL', default='http://localhost:8000/menu/')
 
 # Jazzmin Admin Panel Customization (Bright/Light Theme)
