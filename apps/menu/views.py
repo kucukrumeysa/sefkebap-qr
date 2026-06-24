@@ -5,6 +5,57 @@ import io
 import base64
 import qrcode
 
+# Unsplash kaynaklı ücretsiz yemek görselleri (ürün adı → URL)
+PRODUCT_IMAGE_MAP = {
+    # Izgaralar
+    "Ali Nazik":               "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80",
+    "Külbastı":                "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&q=80",
+    "Lokum Kebap":             "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "Ciğer":                   "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80",
+    "Tavuk Kelebek":           "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80",
+    "Tavuk Kanat":             "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80",
+    "İkiyüzlü Adana Kebap":   "https://images.unsplash.com/photo-1633237308525-cd587cf71926?w=600&q=80",
+    "Sıcak Ezme Üstü Kebap":  "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80",
+    "Kuzu Kaburga":            "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80",
+    "Kazbaşı":                 "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "Kuşbaşı":                 "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80",
+    "Patlıcan Kebap":          "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&q=80",
+    "Beyti":                   "https://images.unsplash.com/photo-1633237308525-cd587cf71926?w=600&q=80",
+    "Tavuk Şiş":               "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80",
+    "Kemikli Tavuk Şiş":      "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80",
+    "Adana Kebap":             "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80",
+    "Karışık Kebap":           "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    # Dürümler
+    "Adana Dürüm":             "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=80",
+    "Tavuk Şiş Dürüm":        "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=80",
+    # İkramlar
+    "Salata":                  "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80",
+    "Soğan Salatası":          "https://images.unsplash.com/photo-1572441713132-51c75654db73?w=600&q=80",
+    "Acılı Ezme":              "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
+    "Haydari":                 "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
+    "Humus":                   "https://images.unsplash.com/photo-1612257416648-d04f0f400082?w=600&q=80",
+    "Patlıcan Ezmesi":         "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
+    "Közlenmiş Mantar":        "https://images.unsplash.com/photo-1504545102780-26774c1bb073?w=600&q=80",
+    "Közlenmiş Biber":         "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
+    "Yeşillik Tabağı":         "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80",
+    # İçecekler
+    "Coca-Cola":               "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=600&q=80",
+    "Coca-Cola Zero":          "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=600&q=80",
+    "Coca-Cola Şişe":          "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=600&q=80",
+    "Fanta":                   "https://images.unsplash.com/photo-1603048719539-9ecb4aa395e3?w=600&q=80",
+    "Sprite":                  "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=600&q=80",
+    "Soda":                    "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=600&q=80",
+    "Fusetea Şeftali":         "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80",
+    "Fusetea Limonlu":         "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80",
+    "Cappy Kayısı":            "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80",
+    "Cappy Vişne":             "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80",
+    "Cappy Şeftali":           "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80",
+    "Su":                      "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80",
+    "Kapalı Ayran":            "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
+    "Açık Ayran":              "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
+    "Şalgam":                  "https://images.unsplash.com/photo-1603048719539-9ecb4aa395e3?w=600&q=80",
+}
+
 
 def home(request):
     return redirect('menu')
@@ -29,6 +80,7 @@ def menu(request):
     context = {
         'categories': categories,
         'featured_products': featured_products,
+        'product_images': PRODUCT_IMAGE_MAP,
     }
     return render(request, 'menu/menu.html', context)
 

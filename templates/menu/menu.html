@@ -311,7 +311,7 @@
 
     <!-- Header -->
     <header class="menu-header">
-        {% load static %}
+        {% load static menu_tags %}
         <img src="{% static 'images/logo.webp' %}" alt="Şef Kebab" class="menu-logo"
              onerror="this.style.display='none'">
         <h1 class="menu-title">Şef Kebab</h1>
@@ -328,11 +328,11 @@
     <!-- Sticky Nav -->
     <nav class="sticky-nav">
         <div class="category-nav">
-            <button class="category-btn active" data-target="popular">⭐ Popüler</button>
+            <button class="category-btn active" data-target="popular">Popüler</button>
             {% for category in categories %}
                 {% if category.active_products.exists %}
                 <button class="category-btn" data-target="cat-{{ category.slug }}">
-                    {{ category.icon }} {{ category.name }}
+                    {{ category.name }}
                 </button>
                 {% endif %}
             {% endfor %}
@@ -354,6 +354,8 @@
                 <div class="prod-card">
                     {% if product.image %}
                         <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                    {% elif product_images|get_item:product.name %}
+                        <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
                     {% else %}
                         <div class="prod-card-emoji">🥩</div>
                     {% endif %}
@@ -397,6 +399,8 @@
                             <div class="prod-card">
                                 {% if product.image %}
                                     <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                                {% elif product_images|get_item:product.name %}
+                                    <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
                                 {% else %}
                                     <div class="prod-card-emoji">{{ category.icon }}</div>
                                 {% endif %}
@@ -429,6 +433,8 @@
                             <div class="prod-card">
                                 {% if product.image %}
                                     <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                                {% elif product_images|get_item:product.name %}
+                                    <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
                                 {% else %}
                                     <div class="prod-card-emoji">{{ category.icon }}</div>
                                 {% endif %}
