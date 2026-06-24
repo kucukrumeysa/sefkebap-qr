@@ -30,13 +30,13 @@ PRODUCT_IMAGE_MAP = {
     "Tavuk Şiş Dürüm":        "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=80",
     # İkramlar
     "Salata":                  "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80",
-    "Soğan Salatası":          "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=600&q=80",
-    "Acılı Ezme":              "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
-    "Haydari":                 "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
-    "Humus":                   "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80",
-    "Patlıcan Ezmesi":         "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
+    "Soğan Salatası":          "https://images.unsplash.com/photo-1515516969-d4008cc6241a?w=600&q=80",
+    "Acılı Ezme":              "https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=600&q=80",
+    "Haydari":                 "https://images.unsplash.com/photo-1571244856341-4f3dd95db36e?w=600&q=80",
+    "Humus":                   "https://images.unsplash.com/photo-1547058886-afaea1d3d1af?w=600&q=80",
+    "Patlıcan Ezmesi":         "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=600&q=80",
     "Közlenmiş Mantar":        "https://images.unsplash.com/photo-1504545102780-26774c1bb073?w=600&q=80",
-    "Közlenmiş Biber":         "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
+    "Közlenmiş Biber":         "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?w=600&q=80",
     "Yeşillik Tabağı":         "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80",
     # İçecekler
     "Coca-Cola":               "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=600&q=80",
@@ -51,8 +51,8 @@ PRODUCT_IMAGE_MAP = {
     "Cappy Vişne":             "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80",
     "Cappy Şeftali":           "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80",
     "Su":                      "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80",
-    "Kapalı Ayran":            "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
-    "Açık Ayran":              "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80",
+    "Kapalı Ayran":            "https://images.unsplash.com/photo-1571244856341-4f3dd95db36e?w=600&q=80",
+    "Açık Ayran":              "https://images.unsplash.com/photo-1571244856341-4f3dd95db36e?w=600&q=80",
     "Şalgam":                  "https://images.unsplash.com/photo-1603048719539-9ecb4aa395e3?w=600&q=80",
 }
 
