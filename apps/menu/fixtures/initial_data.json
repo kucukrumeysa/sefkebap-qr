@@ -446,23 +446,6 @@
   },
   {
     "model": "menu.product",
-    "pk": 23,
-    "fields": {
-      "category": 3,
-      "subcategory": null,
-      "name": "Haydari",
-      "description": "Süzme yoğurt, sarımsak ve taze otlardan oluşan kremsi ve ferahlatıcı meze.",
-      "price": "0.00",
-      "image": "",
-      "is_available": true,
-      "is_featured": false,
-      "portion_info": "",
-      "order": 4,
-      "created_at": "2025-01-01T10:00:00Z"
-    }
-  },
-  {
-    "model": "menu.product",
     "pk": 24,
     "fields": {
       "category": 3,
@@ -474,7 +457,7 @@
       "is_available": true,
       "is_featured": false,
       "portion_info": "",
-      "order": 5,
+      "order": 4,
       "created_at": "2025-01-01T10:00:00Z"
     }
   },
@@ -491,7 +474,7 @@
       "is_available": true,
       "is_featured": false,
       "portion_info": "",
-      "order": 6,
+      "order": 5,
       "created_at": "2025-01-01T10:00:00Z"
     }
   },
@@ -508,24 +491,7 @@
       "is_available": true,
       "is_featured": false,
       "portion_info": "",
-      "order": 7,
-      "created_at": "2025-01-01T10:00:00Z"
-    }
-  },
-  {
-    "model": "menu.product",
-    "pk": 27,
-    "fields": {
-      "category": 3,
-      "subcategory": null,
-      "name": "Közlenmiş Biber",
-      "description": "Fırında közlenmiş, kabuğu soyulmuş, zeytinyağıyla servis edilen közde biber.",
-      "price": "0.00",
-      "image": "",
-      "is_available": true,
-      "is_featured": false,
-      "portion_info": "",
-      "order": 8,
+      "order": 6,
       "created_at": "2025-01-01T10:00:00Z"
     }
   },
@@ -542,7 +508,7 @@
       "is_available": true,
       "is_featured": false,
       "portion_info": "",
-      "order": 9,
+      "order": 7,
       "created_at": "2025-01-01T10:00:00Z"
     }
   },
@@ -798,6 +764,40 @@
       "is_featured": false,
       "portion_info": "Şişe",
       "order": 4,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 44,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Pişmiş Soğan",
+      "description": "Köz ateşinde pişirilmiş, sumaklı ve zeytinyağlı marine kuru soğan.",
+      "price": "0.00",
+      "image": "products/pismis-sogan.jpg",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 8,
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "menu.product",
+    "pk": 44,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "name": "Pişmiş Soğan",
+      "description": "Köz ateşinde pişirilmiş, sumaklı ve zeytinyağlı marine kuru soğan.",
+      "price": "0.00",
+      "image": "products/pismis-sogan.jpg",
+      "is_available": true,
+      "is_featured": false,
+      "portion_info": "",
+      "order": 8,
       "created_at": "2025-01-01T10:00:00Z"
     }
   }
