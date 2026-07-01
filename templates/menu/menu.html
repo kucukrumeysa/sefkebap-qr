@@ -426,9 +426,7 @@
                 {% for product in featured_products %}
                 <div class="prod-card">
                     {% if product.image %}
-                        <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" onerror="this.onerror=null; {% if product_images|get_item:product.name %}this.src='{{ product_images|get_item:product.name }}';{% else %}this.style.display='none';{% endif %}" loading="lazy">
-                    {% elif product_images|get_item:product.name %}
-                        <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
+                        <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
                     {% else %}
                         <div class="prod-card-emoji">🥩</div>
                     {% endif %}
@@ -471,9 +469,7 @@
                             {% for product in sub.active_products %}
                             <div class="prod-card">
                                 {% if product.image %}
-                                    <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" onerror="this.onerror=null; {% if product_images|get_item:product.name %}this.src='{{ product_images|get_item:product.name }}';{% else %}this.style.display='none';{% endif %}" loading="lazy">
-                                {% elif product_images|get_item:product.name %}
-                                    <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
+                                    <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
                                 {% else %}
                                     <div class="prod-card-emoji">{{ category.icon }}</div>
                                 {% endif %}
@@ -505,9 +501,7 @@
                             {% endif %}
                             <div class="prod-card">
                                 {% if product.image %}
-                                    <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" onerror="this.onerror=null; {% if product_images|get_item:product.name %}this.src='{{ product_images|get_item:product.name }}';{% else %}this.style.display='none';{% endif %}" loading="lazy">
-                                {% elif product_images|get_item:product.name %}
-                                    <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
+                                    <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
                                 {% else %}
                                     <div class="prod-card-emoji">{{ category.icon }}</div>
                                 {% endif %}
@@ -537,13 +531,11 @@
                     <div class="card-grid">
                         {% for product in category.active_products %}
                         <div class="prod-card">
-                            {% if product.image %}
-                                <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" onerror="this.onerror=null; {% if product_images|get_item:product.name %}this.src='{{ product_images|get_item:product.name }}';{% else %}this.style.display='none';{% endif %}" loading="lazy">
-                            {% elif product_images|get_item:product.name %}
-                                <img class="prod-card-img" src="{{ product_images|get_item:product.name }}" alt="{{ product.name }}" loading="lazy">
-                            {% else %}
-                                <div class="prod-card-emoji">{{ category.icon }}</div>
-                            {% endif %}
+                             {% if product.image %}
+                                 <img class="prod-card-img" src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                             {% else %}
+                                 <div class="prod-card-emoji">{{ category.icon }}</div>
+                             {% endif %}
                             <div class="prod-card-body">
                                 <div class="prod-card-name">{{ product.name }}</div>
                                 {% if product.description %}
