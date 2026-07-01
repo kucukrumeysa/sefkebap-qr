@@ -9,6 +9,12 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-sef-kebab-secret-key-
 DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='sefkebap-qr.vercel.app,localhost,127.0.0.1').split(',')
 
+vercel_url = os.environ.get("VERCEL_URL")
+if vercel_url:
+    ALLOWED_HOSTS.append(vercel_url)
+
+ALLOWED_HOSTS.append(".vercel.app")
+
 # Production Security Settings
 if not DEBUG:
     # Ensure a proper secret key is set in production
