@@ -251,7 +251,7 @@
       "price": "700.00",
       "image": "products/kusbasi.webp",
       "is_available": true,
-      "is_featured": false,
+      "is_featured": true,
       "portion_info": "1,5 Porsiyon",
       "order": 11,
       "created_at": "2025-01-01T10:00:00Z"
@@ -623,7 +623,7 @@
       "name": "Fusetea Şeftali",
       "description": "Şeftali aromalı soğuk çay.",
       "price": "70.00",
-      "image": "products/fuse-tea.webp",
+      "image": "products/seftali-fusetea.jpg",
       "is_available": true,
       "is_featured": false,
       "portion_info": "Kutu",
