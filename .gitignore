@@ -42,3 +42,7 @@ dist-ssr/
 .env.local
 .env.*
 !.env.example
+
+# Local only - not for deployment
+sefkebap-qr/
+server_out.txt
