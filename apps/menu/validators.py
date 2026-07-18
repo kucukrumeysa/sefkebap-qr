@@ -19,6 +19,8 @@ def validate_product_image(image):
         # Görseli açıp yapısını test et
         img = Image.open(image)
         img.verify()
+        # Dosya pozisyonunu sıfırla (Cloudinary upload için gerekli)
+        image.seek(0)
     except Exception:
         raise ValidationError("Yüklenen dosya bozuk veya geçerli bir görsel değil.")
 
